@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CleanForms from "./components/Clean/CleanForms";
+import LessonForms from "./components/Lesson/LessonForms";
+import Route from "./components/Route";
+import CardDesign from "./components/Card/CardDesign";
+
+import { styled } from "styled-components";
+
+const Container = styled.div`
+  padding: 6.25rem 0 0;
+  max-width: 60.625rem;
+  margin: 0 auto;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Route path="/">
+        <CardDesign />
+      </Route>
+
+      <Route path="/clean">
+        <CleanForms />
+      </Route>
+      <Route path="/lesson">
+        <LessonForms />
+      </Route>
+    </Container>
   );
 }
 
