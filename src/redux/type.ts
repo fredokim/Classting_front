@@ -1,28 +1,13 @@
-export interface Form {
-  data: {
-    formId: number;
-    title: string;
-    items: FormItems[];
-  };
-}
-
-export interface FormItems {
-  itemId: number;
-  title: string;
-  formType: string;
-  options: FormItemOption[];
-}
-
 export interface FormItemOption {
   id: number;
-  text: string;
+  name: string;
 }
 
-export interface Output {
+export interface CategoryForm {
+  trivia_categories: CategoryFormItems[];
+}
+
+export interface CategoryFormItems {
   id: number;
-  items: FormItemOption[];
-  page: number;
-  selectedValue: FormItemOption[];
-  length: number;
-  lastItem: FormItemOption[];
+  name: string;
 }
